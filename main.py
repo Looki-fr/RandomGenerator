@@ -5,15 +5,15 @@ class MyRandom:
     """all the numbers that you will see are big primes numbers"""
     def __init__(self, seed=None):
         import time
-        self.b=256487683
+        self.increment=256487683
         if seed==None:
             self.seed=self.get_seed(time.time())
         else:
             self.seed=self.get_seed(seed)
-        self.current_number=self.seed + self.b
+        self.current_number=self.seed + self.increment
             
     def get_seed(self,a):
-        return a*5456163703 + self.b
+        return a*5456163703 + self.increment
 
     def _randint_0_to_x(self,x):
         """int x : the upper born of the interval
@@ -26,7 +26,7 @@ class MyRandom:
         x=x+2
         result=-1
         while result < 0 or result > x-2:
-            self.current_number = self.current_number*self.seed + self.b
+            self.current_number = self.current_number*self.seed + self.increment
             self.current_number=self.current_number%(x*(x+100000000))
             result=round(self.current_number/(x+100000000))-1
         return result
@@ -41,7 +41,7 @@ class MyRandom:
         x=x+2
         result=-1
         while result < 0 or result > x-2:
-            self.current_number = self.current_number*self.seed + 256487683
+            self.current_number = self.current_number*self.seed + self.increment
             self.current_number=self.current_number%(x*(x+100000000))
             result=self.current_number/(x+100000000)-1
         return result
