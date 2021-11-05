@@ -5,11 +5,11 @@ class MyRandom:
     """all the numbers that you will see are big primes numbers"""
     def __init__(self, seed=None):
         import time
+        self.b=256487683
         if seed==None:
             self.seed=self.get_seed(time.time())
         else:
             self.seed=self.get_seed(seed)
-        self.b=256487683
         self.current_number=self.seed + self.b
             
     def get_seed(self,a):
