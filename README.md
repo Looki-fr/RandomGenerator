@@ -1,3 +1,3 @@
 # RandomGenerator
 
-A program i made to understand how pseudo randomness work in computers.
+A program i made to understand how pseudo randomness works in computers.
